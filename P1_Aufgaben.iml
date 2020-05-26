@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/LE02" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE03" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE04" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/misc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/divers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE05" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE06" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE08" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE07" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE09" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LE10" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/LE08/vfhgp2.GP2REK.offline" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
