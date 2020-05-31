@@ -9,6 +9,7 @@ public class TypeConstants {
         // Array mit den relevanten Konstanten der Datentypen
         Object[][] typeArray = {
                 {"byte", Byte.BYTES, Byte.MIN_VALUE, Byte.MAX_VALUE},
+                {"char", Character.BYTES, Character.MIN_VALUE, Character.MAX_VALUE},
                 {"short", Short.BYTES, Short.MIN_VALUE, Short.MAX_VALUE},
                 {"int", Integer.BYTES, Integer.MIN_VALUE, Integer.MAX_VALUE},
                 {"long", Long.BYTES, Long.MIN_VALUE, Long.MAX_VALUE},
