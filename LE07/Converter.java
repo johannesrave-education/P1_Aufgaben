@@ -1,5 +1,7 @@
 /**
  * P1_LE07
+ * Entwickelt und getestet mit JDK 13.
+ * Diese Klasse enthält Methoden zur Konvertierung von Ganzzahlen bzw. Ziffern in Strings und umgekehrt.
  *
  * @author Johannes Rave, Medieninformatik
  * @version 1.1 27.5.2020
@@ -78,7 +80,7 @@ public class Converter {
      */
     public static int toAscii2(int i){
         if (i>=0 && i<=9) {
-            int a = (int) Integer.toString(i).charAt(0);
+            int a = Integer.toString(i).charAt(0);
             System.out.println("Für die Ziffer "+i+" steht der ASCII-Code "+a+".");
             return a;
         } else {
@@ -126,5 +128,4 @@ public class Converter {
             return -1;
         }
     }
-
 }

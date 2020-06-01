@@ -1,3 +1,15 @@
+/**
+ * P1_LE08
+ * Entwickelt und getestet mit JDK 13.
+ * Diese Klasse enthält Methoden, um die beiliegenden Text-Dateien einzulesen, 
+ * daraus eine Spielbrett zu bauen (implementiert als char-Array),
+ * auf dem Spielbrett von einem beliebigen freien Feld aus einen Ausweg aus dem Labyrinth zu finden und
+ * das Labyrinth mit dem eingezeichneten Fluchtweg farbig auf der Konsole zu drucken.
+ *
+ * @author Johannes Rave, Medieninformatik
+ * @version 1.1 1.6.2020
+ */
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -123,12 +135,17 @@ public class Labyrinth {
         System.out.print("\n\n*** Labyrinth A\n\n");
         labyrinth = baueKarte(liesKarte("LE08\\labA.txt"));
         System.out.println();
-        findeWeg(labyrinth, 4 , 4);
+        findeWeg(labyrinth, 4, 4);
 
         System.out.print("\n\n*** Labyrinth B\n");
         labyrinth = baueKarte(liesKarte("LE08\\labB.txt"));
         System.out.println();
-        findeWeg(labyrinth, 4 , 4);
+        findeWeg(labyrinth, 4, 4);
+
+        System.out.print("\n\n*** Labyrinth C\n");
+        labyrinth = baueKarte(liesKarte("LE08\\labC.txt"));
+        System.out.println();
+        findeWeg(labyrinth, 4, 6);
        // druckeKarte(labyrinth);
     }
 }
