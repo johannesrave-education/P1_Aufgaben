@@ -11,7 +11,6 @@
  */
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -38,10 +37,7 @@ public class Labyrinth {
             }
             levelFile.close();
             return labArray;
-
-        } catch (FileNotFoundException e) {
-            System.out.println("A file error occurred.");
-            e.printStackTrace();
+            
         } catch (IOException e) {
             System.out.println("An IO error occurred.");
             e.printStackTrace();

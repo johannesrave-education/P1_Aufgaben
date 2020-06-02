@@ -1,3 +1,13 @@
+/**
+ * P1_LE09
+ * Entwickelt und getestet mit JDK 13.
+ * Diese Klasse enthält Methoden, um einen als Argument übergebenen Pfad als
+ * Datei oder Verzeichnis zu erkennen und Informationen zu diesem Objekt anzuzeigen. 
+ *
+ * @author Johannes Rave, Medieninformatik
+ * @version 1.0 1.6.2020
+ */
+
 import java.io.*;
 
 public class FileAttribute {

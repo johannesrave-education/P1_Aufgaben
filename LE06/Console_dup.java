@@ -4,7 +4,7 @@ import java.io.*;
  * @author Harald Loose (loose@fh-brandenburg.de)
  * @version 1.00, 16.11.2003
  */
-public class Console {
+public class Console_dup {
 
   /* Der Aufbau eines gepufferten Eingabestroms ermöglicht das spätere Einlesen
    *  einer Zeile, die dann durch gegeignete Parser ausgewertet werden kann.

@@ -14,12 +14,12 @@ public class copy {
             System.out.println("Öffne Datei " + oFile);
             BufferedReader originalFile =
                     new BufferedReader(
-                            new FileReader(oFile));
+                    new FileReader(oFile));
 
             System.out.println("Erstelle Datei " + tFile);
             BufferedWriter targetFile =
                     new BufferedWriter(
-                            new FileWriter(tFile));
+                    new FileWriter(tFile));
 
             int lineCount = 0;
             while (originalFile.readLine() != null) {
@@ -29,7 +29,7 @@ public class copy {
             originalFile.close();
             originalFile =
                     new BufferedReader(
-                            new FileReader(oFile));
+                    new FileReader(oFile));
 
             System.out.println("Kopiere Datei " + oFile + " zeilenweise nach " + tFile + ".");
             for (int i = 0; i < lineCount; i++) {
