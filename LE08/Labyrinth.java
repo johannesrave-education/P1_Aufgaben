@@ -33,7 +33,6 @@ public class Labyrinth {
                     new FileReader(fileName));
             for (int i = 0; i < lineCount; i++){
                 labArray[i] = levelFile.readLine();
-                //System.out.println(labArray[i]);
             }
             levelFile.close();
             return labArray;
@@ -43,18 +42,6 @@ public class Labyrinth {
             e.printStackTrace();
         }
         return new String[0];
-    }
-
-    public static char[][] baueKarte(String labString, int rows){
-        int columns = (labString.length()/rows);
-        char[][] karte = new char[rows][columns];
-
-        for (int r = 0; r < rows; r++){
-            for (int c = 0; c < columns; c++){
-                karte[r][c] = labString.charAt(r*rows + c);
-            }
-        }
-        return karte;
     }
 
     public static char[][] baueKarte(String[] labArray){
@@ -69,13 +56,13 @@ public class Labyrinth {
         }
         return karte;
     }
-    
 
     public static boolean aufDerSuche = false;
 
     public static void  findeWeg(char[][] karte, int x, int y){
         aufDerSuche = true;
         findeAlgo(karte, x , y);
+        druckeKarte(karte);
     }
 
     public static void findeAlgo(char[][] karte, int x, int y){
@@ -83,6 +70,7 @@ public class Labyrinth {
         karte[x][y] = '*';
 
         if (x > (karte.length-2) || x < 1 || y > (karte[0].length-2) || y < 1){
+            System.out.println("\nWir haben einen Ausweg aus dem Labyrinth gefunden!");
             druckeKarte(karte);
             aufDerSuche = false;
             return;
@@ -99,8 +87,8 @@ public class Labyrinth {
     public static void druckeKarte(char[][] karte){
         
         // Farbige Konsolendarstellung, funktioniert evtl nicht mit Windows-CMD
-        String GREEN_BOLD_BRIGHT = "\033[1;92m"; // GREEN
-        String RESET = "\033[0m";  // Text Reset
+        String GREEN_BOLD_BRIGHT = "\033[1;92m";
+        String RESET = "\033[0m";
         
         int rows = karte.length;
         int columns = karte[0].length;
@@ -114,15 +102,6 @@ public class Labyrinth {
             }
             System.out.println();
         }
-    }
-
-    public static char[][] labArray2(String labString){
-        String[] rows = labString.split("\n");
-        char[][] lab = new char[rows.length][rows[0].length()];
-        for (String row: rows){
-            row.toCharArray();
-        }
-        return lab;
     }
 
     public static void main (String[] args){
@@ -142,6 +121,5 @@ public class Labyrinth {
         labyrinth = baueKarte(liesKarte("LE08\\labC.txt"));
         System.out.println();
         findeWeg(labyrinth, 4, 6);
-       // druckeKarte(labyrinth);
     }
 }
