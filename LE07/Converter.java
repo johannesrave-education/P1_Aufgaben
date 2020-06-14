@@ -14,8 +14,7 @@ public class Converter {
         intToString(30);
         stringToInt("56");
         System.out.println();
-
-
+        
         System.out.println("int nach ASCII, Methode 1:");
         toAscii(7);
         toAscii(-2);
