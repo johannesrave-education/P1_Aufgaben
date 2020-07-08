@@ -1,5 +1,5 @@
 /**
- * P1_LE09
+ * P1_LE10
  * Entwickelt und getestet mit JDK 13.
  * Diese Klasse enthält Methoden, um ein Telefonbuch zu verwalten.
  * Durch die vielen System.out-Beschreibungen werden alle Funktionen erklärt.
@@ -115,11 +115,9 @@ public class TelefonListe {
     private static void ladeListe() {
         System.out.println("*** Telefonbuch importieren.");
         try (BufferedReader telefonbuch = new BufferedReader(new FileReader("telefonbuch"))){
-            int lineCount = 0;
             String line;
             while ((line = telefonbuch.readLine()) != null){
                 liste.add(line);
-                lineCount++;
             }
             sortiere();
             System.out.println("Telefonbuch wurde aus Datei importiert und sortiert.");            
@@ -184,15 +182,19 @@ public class TelefonListe {
         String os = System.getProperty("os.name");
         if (os.contains("Windows")){
             try {
-                PrintStream ps = new PrintStream(System.out, true, encoding);
-                System.setOut(ps);
+                ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", "chcp", "65001").inheritIO();
+                Process p = pb.start();
+                p.waitFor();
                 System.out.println("Encoding wurde umgestellt, in der Hoffnung\n" +
-                                   "dass Windows CMD nun Umlaute darstellt.");
+                                   "dass Windows CMD nun Umlaute darstellt: öäü");
                 
-                ps.print("Hier ein direkter Print vom OUT-STREAM  oeaeue");
             } catch (UnsupportedEncodingException e){
                 System.out.println("Encoding konnte nicht umgestellt werden.\n" +
                                    "Umlaute werden u.U. falsch dargestellt.");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

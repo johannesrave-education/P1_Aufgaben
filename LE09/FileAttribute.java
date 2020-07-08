@@ -40,9 +40,7 @@ public class FileAttribute {
         } else if (datei.isDirectory()) {
             System.out.println(datei.getName() + " ist ein Verzeichnis.");
             System.out.println();
-
         }
-
     }
     
     public static void main (String[] args){

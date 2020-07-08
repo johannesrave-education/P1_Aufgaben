@@ -61,8 +61,13 @@ public class Labyrinth {
 
     public static void  findeWeg(char[][] karte, int x, int y){
         aufDerSuche = true;
-        findeAlgo(karte, x , y);
+        karte[x][y] = '*';
+        System.out.println("\n*** Das leere Labyrinth:");
         druckeKarte(karte);
+
+        System.out.println("*** Gibt es einen Ausweg?");
+        findeAlgo(karte, x , y);
+        
     }
 
     public static void findeAlgo(char[][] karte, int x, int y){
@@ -70,15 +75,16 @@ public class Labyrinth {
         karte[x][y] = '*';
 
         if (x > (karte.length-2) || x < 1 || y > (karte[0].length-2) || y < 1){
-            System.out.println("\nWir haben einen Ausweg aus dem Labyrinth gefunden!");
+            System.out.println("\n*** Wir haben einen Ausweg aus dem Labyrinth gefunden!");
             druckeKarte(karte);
+            
             aufDerSuche = false;
             return;
         }
         int[][] nesw = {{x-1,y},{x,y+1},{x+1,y},{x,y-1}};
         for (int[] dir : nesw){
             if(aufDerSuche && karte[dir[0]][dir[1]] != 'X' && karte[dir[0]][dir[1]] != '*') {
-                System.out.println("Gehe nach " + dir[0] + "/" + dir[1]);
+                // System.out.println("Gehe nach " + dir[0] + "/" + dir[1]);
                 findeAlgo(karte, dir[0], dir[1]);
             }
         }
